@@ -1,0 +1,9 @@
+User-agent: Mediapartners-Google
+Disallow:
+User-agent: *
+Disallow: /psd/
+Disallow: /ajax/
+Disallow: /stuff/
+Disallow: /admin/
+Disallow: /ads/
+Disallow: /sitemap/sitemaps.php

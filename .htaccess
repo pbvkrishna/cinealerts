@@ -1,0 +1,105 @@
+ExpiresActive on
+ExpiresDefault A29030400
+ExpiresByType image/gif A29030400
+ExpiresByType image/jpeg A29030400
+ExpiresByType image/png A29030400
+ExpiresByType text/css A29030400
+ExpiresByType text/javascript A29030400
+ExpiresByType application/x-javascript A29030400
+
+<filesMatch "\.(js)$">
+ExpiresDefault A29030400
+</FilesMatch>
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+RewriteCond %{SERVER_PORT} !=443
+RewriteCond %{HTTP_HOST} ^(www\.)?cinealerts\.com$ [NC]
+RewriteRule ^$ https://www.cinealerts.com%{REQUEST_URI} [R=301,L]
+
+#RewriteCond %{HTTP_HOST} ^cinealerts.com$
+#RewriteRule ^(.*)$ "http\:\/\/www\.cinealerts\.com\/$1" [R=301,L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^gallery/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*)/ /index.php?gallery=$1&$2=$3&$4=$5&$6=$7 [L]
+RewriteRule ^gallery/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*) /index.php?gallery=$1&$2=$3&$4=$5&$6=$7 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^gallery/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*)/ /index.php?gallery=$1&$2=$3&$4=$5 [L]
+RewriteRule ^gallery/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*) /index.php?gallery=$1&$2=$3&$4=$5 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^gallery/([^/]+)/([^/]+)/(.*)/ /index.php?gallery=$1&$2=$3 [L]
+RewriteRule ^gallery/([^/]+)/([^/]+)/(.*) /index.php?gallery=$1&$2=$3 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^gallery/([^/]+)/ /index.php?gallery=$1 [L]
+RewriteRule ^gallery/([^/]+) /index.php?gallery=$1 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^upcoming/([^/]+)/([^/]+)/(.*)/ /index.php?upcoming=$1&$2=$3 [L]
+RewriteRule ^upcoming/([^/]+)/([^/]+)/(.*) /index.php?upcoming=$1&$2=$3 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^upcoming/([^/]+)/ /index.php?upcoming=$1 [L]
+RewriteRule ^upcoming/([^/]+) /index.php?upcoming=$1 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^news/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*)/ /index.php?news=$1&$2=$3&$4=$5&$6=$7 [L]
+RewriteRule ^news/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*) /index.php?news=$1&$2=$3&$4=$5&$6=$7 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^news/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*)/ /index.php?news=$1&$2=$3&$4=$5 [L]
+RewriteRule ^news/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*) /index.php?news=$1&$2=$3&$4=$5 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^news/([^/]+)/([^/]+)/(.*)/ /index.php?news=$1&$2=$3 [L]
+RewriteRule ^news/([^/]+)/([^/]+)/(.*) /index.php?news=$1&$2=$3 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^news/([^/]+)/ /index.php?news=$1 [L]
+RewriteRule ^news/([^/]+) /index.php?news=$1 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^news/ /index.php?news=latest [L]
+RewriteRule ^news /index.php?news=latest [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*) /index.php?city=$1&$2=$3&$4=$5&$6=$7 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*)/ /index.php?city=$1&$2=$3&$4=$5 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*) /index.php?city=$1&$2=$3&$4=$5 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^([^/]+)/([^/]+)/(.*)/ /index.php?city=$1&$2=$3 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^([^/]+)/([^/]+)/(.*) /index.php?city=$1&$2=$3 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^([^/]+)/ /index.php?city=$1 [L]
+
+rewriteCond %{REQUEST_FILENAME} !-f
+rewriteCond %{REQUEST_FILENAME} !-d 
+RewriteRule ^([^/]+) /index.php?city=$1 [L]

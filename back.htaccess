@@ -1,0 +1,20 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteBase /
+
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*)/([^/]+)/(.*)/ /index.php?city=$1&$2=$3&$4=$5&$6=$7 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)/(.*)/ /index.php?city=$1&$2=$3&$4=$5 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([^/]+)/([^/]+)/(.*)/ /index.php?city=$1&$2=$3 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^([^/]+)/ /index.php?city=$1 [L]
+RewriteCond %{HTTP_HOST} ^cinealerts.com$
+RewriteRule ^(.*)$ "http\:\/\/www\.cinealerts\.com$1" [R=301,L]
+
