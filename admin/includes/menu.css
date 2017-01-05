@@ -1,0 +1,117 @@
+td.suckertreemenu a, td.suckertreemenu a:visited
+{
+color:#FFFFFF;
+font-size:12px;
+font-weight:500;
+line-height:26px;
+text-decoration:none;
+background-color:#000000;
+padding:0px;
+margin:0px;
+}
+
+
+
+.suckertreemenu ul{
+margin:0px;
+padding:0px;
+list-style-type: none;
+font: bold 11px Arial;
+height:26px;
+background-color:#000000;
+z-index:200;
+}
+
+/*Top level list items*/
+.suckertreemenu ul li{
+position: relative;
+display: block;
+float: left;
+border-right:1px solid #ffffff;
+border-left:1px solid #ffffff;
+text-align:center;
+background-color:#000000;
+
+}
+
+.sub_suckertreemenu ul
+{
+list-style-type: none;
+font: bold 11px Arial;
+line-height:26px;
+text-decoration:none;
+padding:0px;
+margin:0px;
+
+}
+
+.sub_suckertreemenu ul li a{
+
+position: relative;
+float: left;
+border-right:1px solid #ffffff;
+border-left:1px solid #ffffff;
+text-align:center;
+background-color:#000099;
+color:#FFFFFF;
+}
+
+.sub_suckertreemenu ul li a:hover{
+background-color:#FFFFFF;
+color:#000099;
+}
+
+.suckertreemenu ul li ul li{
+width:130px;
+}
+
+/*Top level menu link items style*/
+.suckertreemenu ul li a, .suckertreemenu ul li a:visited{
+display: block;
+border-left-width: 0;
+text-decoration: none;
+color: white;
+padding:0px 15px 0px 15px;
+}
+	
+/*1st sub level menu*/
+.suckertreemenu ul li ul{
+left: 0;
+position: absolute;
+top: 1em; /* no need to change, as true value set by script */
+display: block;
+visibility: hidden;
+background:none;
+background-color:#000000;
+}
+
+/* Sub level menu links style */
+.suckertreemenu ul li ul li a, .suckertreemenu ul li ul li a:visited{
+display:block;
+border-bottom: 1px solid #ccc;
+border-right: 1px solid #ccc;
+background:none;
+background-color:#000000;
+text-align:left;
+padding-left:13px;
+}
+
+.suckertreemenu ul li ul li a:hover{
+background-color:#E5E5E5;
+color:#F05A00;
+text-decoration:none;
+}
+
+.suckertreemenu ul li a:hover{
+background-color:#E5E5E5;
+color:#F00F00;
+text-decoration:none;
+}
+
+.suckertreemenu ul li.sel a, .suckertreemenu ul li ul li.sel a, .sub_suckertreemenu ul li.sel a, .sub_suckertreemenu ul li ul li.sel a
+{
+background-color:#E5E5E5;
+color:#F05A00;
+text-decoration:none;
+}
+
